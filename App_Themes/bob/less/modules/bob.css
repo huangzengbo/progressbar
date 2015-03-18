@@ -1,0 +1,16 @@
+﻿a {
+  color: #4ba61d;
+  text-decoration: underline;
+}
+.content .wrap {
+  padding: 0;
+  position: relative;
+}
+.bar {
+  margin: 20px 0;
+}
+.bar ul li {
+  list-style: none;
+  text-align: center;
+}
+/*# sourceMappingURL=bob.css.map */

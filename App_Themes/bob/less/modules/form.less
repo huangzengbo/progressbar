@@ -1,0 +1,459 @@
+﻿fieldset
+{
+    border: 1px solid #abaaa6;
+    .rounded-corners(10px);
+    padding: 10px 30px;
+    background-color: #f5f3f4;
+    width: 100%;
+    float: left;
+    margin: 20px 0;
+    @media screen and (max-width: 600px)
+    {
+        padding: 10px;
+    }
+}
+
+.form-field-wrap
+{
+    float: left;
+    width: 100%;
+    display: block;
+    .rounded-corners(6px);
+    &.error-wrap{
+        border:1px solid #e21a3c;
+    }
+    @media screen and (max-width: 700px)
+    {
+        margin: 5px 0;
+    }
+
+    label
+    {
+        padding: 10px;
+        .narrow-font;
+        float: left;
+        width: 100%;
+        font-size: 14px;
+        background-color: #d2cfb0;
+    }
+
+
+
+    .form-field
+    {
+        padding-right: 10px;
+        width: 100%;
+        position: relative;
+        float: left;
+        @media screen and (max-width: 700px)
+        {
+            padding-right: 0;
+        }
+        &.error
+        {
+            
+            .validation-icon
+            {
+                &:before
+                {
+                    content: "\e605";
+                    font-family: 'icomoon';
+                    .red-font;
+                    font-size: 18px;
+                }
+            }
+
+
+            label.error
+            {
+                margin: 0;
+                border-top:1px solid #ccc;
+                font-size: 13px;
+                line-height: 15px;
+                background:white;
+            }
+
+            label
+            {
+                &:before
+                {
+                    color: #e02144;
+                }
+            }
+        }
+
+        &.correct
+        {
+            .validation-icon
+            {
+                &:before
+                {
+                    content: "\e604";
+                    font-family: 'icomoon';
+                    color: #589117;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        &.button-field
+        {
+            padding-right: 0;
+            width: auto;
+            float: right;
+
+            input
+            {
+                padding: 5px 10px;
+            }
+
+            .validation-icon
+            {
+                display: none;
+            }
+        }
+
+        &.text-field
+        {
+            padding-right: 0;
+
+            input
+            {
+                padding-right: 40px;
+            }
+        }
+
+        &.normal-checkbox-field
+        {
+            .validation-icon
+            {
+                top: 1px;
+            }
+        }
+
+        .dob-day-wrap
+        {
+            width: 75px;
+            margin-right: 10px;
+            float: left;
+
+            @media screen and (max-width: 700px)
+            {
+                width: 30%; margin-right: 2%;
+            }
+        }
+
+        .dob-month-wrap
+        {
+            width: 75px;
+            margin-right: 10px;
+            float: left;
+
+            @media screen and (max-width: 700px)
+            {
+                width: 30%; margin-right: 2%;
+            }
+        }
+
+        .dob-year-wrap
+        {
+            width: 100px;
+            float: left;
+
+            @media screen and (max-width: 700px)
+            {
+                width: 35%;
+            }
+        }
+
+        input
+        {
+            border: none;
+            padding: 10px;
+            float: left;
+            width: 100%;
+            font-size: 14px;
+            .transition(border 0.3s linear);
+
+
+
+            &.checking
+            {
+                background: transparent url('../images/loading.gif') 97% 50% no-repeat;
+                background-size: 16px 16px;
+            }
+        }
+
+
+        label
+        {
+            margin-top: 2px;
+            .normal-font;
+            font-size: 11px;
+            font-weight: normal;
+            .red-font;
+        }
+
+        &.button-field
+        {
+            input[type=submit]
+            {
+                border: none;
+            }
+        }
+
+        .validation-icon
+        {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            display: block;
+            width: 20px;
+            height: 20px;
+        }
+
+
+
+        .form-field-block
+        {
+            display: block;
+            float: left;
+        }
+
+        .form-field-gap
+        {
+            display: block;
+            float: left;
+            line-height: 41px;
+            margin: 0 10px;
+        }
+
+        &.form-field-type-icon
+        {
+            .validation-icon
+            {
+                display: none!important;
+            }
+
+            em
+            {
+                font-style: normal;
+                font-family: 'icomoon';
+                position: absolute;
+                right: 10px;
+                top: 6px;
+                display: block;
+                width: 30px;
+                height: 30px;
+                border-left: 1px solid #ccc;
+                color: #ccc;
+                text-align: center;
+                font-size: 21px;
+                line-height: 30px;
+                font-weight: normal;
+                padding-left: 7px;
+                .transition;
+            }
+
+            &.error
+            {
+                em
+                {
+                    color: #e21a3c;
+                    border-left: 1px solid #e21a3c;
+                }
+            }
+
+            &.correct
+            {
+                em
+                {
+                    color: #589117;
+                    border-left: 1px solid #589117;
+                }
+            }
+        }
+    }
+
+    &.form-field-text
+    {
+        margin-top: 0;
+
+        .form-field
+        {
+            padding-right: 0;
+        }
+
+        h3
+        {
+            margin-bottom: 5px;
+        }
+
+        ul
+        {
+            li
+            {
+                .normal-font;
+                padding: 0;
+                margin-left: 20px;
+                font-size: 13px;
+            }
+        }
+
+        p
+        {
+            .normal-font;
+            font-size: 13px;
+        }
+    }
+
+    &.form-field-wrap-continue
+    {
+        margin-top: 0;
+    }
+
+    &.form-field-wrap-no-border
+    {
+        border: none;
+    }
+
+    &.form-field-wrap-half
+    {
+        width: 50%;
+        margin-right: 1px;
+        clear: both;
+
+        @media screen and (max-width: 1024px)
+        {
+            width: 80%;
+        }
+
+        @media screen and (max-width: 800px)
+        {
+            width: 100%;
+        }
+    }
+
+    &.form-field-wrap-real-half
+    {
+        width: 40%;
+        margin-right: 10%;
+
+        @media screen and (max-width: 1024px)
+        {
+            width: 80%;
+        }
+
+        @media screen and (max-width: 800px)
+        {
+            width: 100%;
+        }
+    }
+
+    &.form-field-wrap-half-half
+    {
+        width: 25%;
+        margin-right: 1px;
+        clear: both;
+
+        @media screen and (max-width: 1024px)
+        {
+            width: 80%;
+        }
+
+        @media screen and (max-width: 800px)
+        {
+            width: 100%;
+        }
+    }
+
+    &.form-field-credit-card
+    {
+        .validation-icon
+        {
+            display: none;
+        }
+    }
+}
+
+.forgot-password
+{
+    .red-font;
+    text-decoration: none;
+
+    &:hover
+    {
+        .red-font;
+    }
+
+    &:before
+    {
+        font-family: 'icomoon';
+        content: "\e61a";
+        padding-right: 5px;
+    }
+}
+
+#forgot-password-wrap
+{
+    max-width: 600px;
+}
+
+.form-field-explain
+{
+    position: absolute;
+    right: 0;
+    top: 10px;
+    .normal-font;
+    font-size: 13px;
+    left: 104%;
+    width: 100%;
+
+    @media screen and (max-width: 1024px)
+    {
+        width: 30%; margin-top:-10px; left: 102%;
+    }
+
+    @media screen and (max-width: 800px)
+    {
+        width: 100%; margin-top:-31px; left:0; font-size:12px;
+    }
+
+    &.js-welcome-back
+    {
+        margin-top: 0;
+
+        @media screen and (max-width: 800px)
+        {
+            margin-top:-31px;
+        }
+    }
+}
+
+.captcha-field
+{
+    font-size: 0.9em;
+}
+
+.field-validation-error
+{
+    margin-top: 2px;
+    margin-bottom: 0;
+    font-size: 13px;
+    line-height: 15px;
+    font-weight: normal;
+    .red-font;
+}
+
+#submit-forgot-password-email
+{
+    @media screen and (max-width: 500px)
+    {
+        font-size:11px; line-height:20px;
+    }
+}
+
+.form-field-wrap .form-field.middle-error .validation-icon
+{
+    display: none;
+}

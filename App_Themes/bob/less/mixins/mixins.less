@@ -1,0 +1,98 @@
+.gradient(@gradFrom: #fcfcfc,@gradTo: #f9f9f9 ) {
+    background: @gradTo; /* for non-css3 browsers */
+    background: -webkit-gradient(linear, left top, left bottom, from(@gradFrom), to(@gradTo)); /* for webkit browsers */
+    background: -moz-linear-gradient(top, @gradFrom, @gradTo); /* for firefox 3.6+ */
+}
+
+.half-gradient(@gradFrom: #cccccc, @gradMiddle: #ffffff, @gradTo: #cccccc ) {
+    background: @gradTo; /* Old browsers */
+    background: -moz-linear-gradient(top, @gradFrom 0%, @gradMiddle 50%, @gradMiddle 51%, @gradTo 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@gradFrom), color-stop(50%,@gradMiddle), color-stop(51%,@gradMiddle), color-stop(100%,@gradTo)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, @gradFrom 0%,@gradMiddle 50%,@gradMiddle 51%,@gradTo 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, @gradFrom 0%,@gradMiddle 50%,@gradMiddle 51%,@gradTo 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, @gradFrom 0%,@gradMiddle 50%,@gradMiddle 51%,@gradTo 100%); /* IE10+ */
+    background: linear-gradient(to bottom, @gradFrom 0%,@gradMiddle 50%,@gradMiddle 51%,@gradTo 100%); /* W3C */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#cccccc')";
+}
+
+.three-quater-gradient(@gradFrom: #cccccc, @gradMiddle: #ffffff, @gradTo: #eeeeee ) {
+    background: @gradTo; /* Old browsers */
+    background: -moz-linear-gradient(top, @gradFrom 0%, @gradMiddle 75%, @gradMiddle 76%, @gradTo 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@gradFrom), color-stop(75%,@gradMiddle), color-stop(76%,@gradMiddle), color-stop(100%,@gradTo)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, @gradFrom 0%,@gradMiddle 75%,@gradMiddle 76%,@gradTo 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, @gradFrom 0%,@gradMiddle 75%,@gradMiddle 76%,@gradTo 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, @gradFrom 0%,@gradMiddle 75%,@gradMiddle 76%,@gradTo 100%); /* IE10+ */
+    background: linear-gradient(to bottom, @gradFrom 0%,@gradMiddle 75%,@gradMiddle 76%,@gradTo 100%); /* W3C */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#cccccc')";
+}
+
+
+.transition (@trans: all 0.3s linear) {
+    transition: @trans;
+    -webkit-transition: @trans;
+    -moz-transition: @trans;
+    -o-transition: @trans;
+}
+
+.transition-delay (@trans: 2s) {
+    transition-delay: @trans;
+    -webkit-transition-delay: @trans;
+}
+
+.rounded-corners (@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -ms-border-radius: @radius;
+    -o-border-radius: @radius;
+    border-radius: @radius;
+    .lt-ie9 &{
+        //behavior: url('PIE.htc');
+        //position:relative;
+    }
+}
+
+.box-shadow (@boxShadow1: #3a3a3a 0px 3px 1px, @boxShadow2: transparent 0px 0px 0px) {
+    -webkit-box-shadow: @boxShadow1, @boxShadow2;
+    -moz-box-shadow: @boxShadow1, @boxShadow2;
+    box-shadow: @boxShadow1, @boxShadow2;
+}
+
+.text-shadow (@textShadow1: 0px 3px 1px rgba(0,0,0,0.35), @textShadow2: transparent 0px 0px 0px) {
+    text-shadow: @textShadow1, @textShadow2;
+}
+
+.box-sizing (@border-box:border-box) {
+	-webkit-box-sizing: @border-box;
+	-moz-box-sizing: @border-box;
+	box-sizing: @border-box;
+}
+
+.greyscale(@percent:100%){
+    filter: grayscale(@percent);
+    -webkit-filter: grayscale(@percent);
+    -moz-filter: grayscale(@percent);
+    filter: grayscale(@percent);
+}
+
+.at2x(@path, @w: auto, @h: auto) {
+  background-image: url(@path);
+  @at2x_path: ~`"@{path}".split('.').slice(0, "@{path}".split('.').length - 1).join(".") + "@2x" + "." + "@{path}".split('.')["@{path}".split('.').length - 1]`;
+
+  @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+    background-image: url(@at2x_path);
+    background-size: @w @h;
+  }  
+}
+
+.rotate(@degree:7deg){
+    transform:rotate(@degree);
+    -ms-transform:rotate(@degree); /* IE 9 */
+    -webkit-transform:rotate(@degree);
+}
+
+.accelerate{
+    -webkit-transform : translateZ(0); 
+	-o-transform : translateZ(0); 
+	-moz-transform : translateZ(0); 
+	transform : translateZ(0); 
+}
